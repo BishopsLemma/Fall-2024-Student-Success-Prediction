@@ -10,3 +10,5 @@ To-do:
 Project topic ideas:
 - Classification problem: predict whether or not student will graduate in a 4-year period depending on their grades in certain math courses.
 - 
+
+Next meeting: Friday Oct 18 at 4:30 pm EST.
