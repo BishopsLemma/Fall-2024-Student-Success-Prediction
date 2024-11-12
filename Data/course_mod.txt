@@ -51,3 +51,120 @@ TEACH SEC SCHL MATH (497)
 Needs to be fixed
 -----------------
 INTRO TO PROBABILTY and INTRO PROBAB&MATRIC are the same course - (MATH 104)
+
+
+Dictionary of courses to be dropped:
+{
+    "10": "HIGH SCHOOL ALGEBRA",
+    "492": "UNDERGRAD SEMINAR",
+    "495": "SPECIAL TOPICS",
+    "490": "INDEPENDENT STUDY",
+    "106": "DISCOVERING MATH",
+    "181": "LIFE SCI CALC&MDL I",
+    "331": "TOPOLOGY"
+}
+
+Dictionary of general math courses:
+{   
+    '104': 'INTRO TO PROBABILTY',
+    "105": "INTRO TO MATH IDEA",
+    "140": "COLLEGE ALGEBRA",
+    "143": "PREP FOR CALCULUS",
+    "145": "APPLD TRIGONOMETR",
+    "150": "DISC MATH BUS&SOC S",
+    "151": "BUS & SOC SCI CALC",
+    "160": "SURVEY OF CALCULUS",
+    "165": "CALCULUS I",
+    "166": "CALCULUS II",
+    "207": "MATRCES&LINEAR ALGB",
+    "265": "CALCULUS III",
+    "266": "ELEM DIFF EQUATNS",
+    "267": "DIFF EQ & TRANSFMS"
+}
+
+{
+    "101": "ORIENTATION IN MATH",
+    "201": "INTRO TO PROOFS",
+    "240": "INVESTM&CREDIT MATH",
+    "301": "ABSTRACT ALGEBRA I",
+    "304": "COMBINATORICS",
+    "314": "GRAPH THEORY",
+    "317": 'THRY LINEAR ALGEBRA',
+    "350": "NUMBER THEORY",
+    '341': 'INTR THY PROBAB&S I',
+    '342': 'INTR THY PR&STAT II',
+    "365": "COMPLEX VARIABLES",
+    "373": "INTR SCIENTF CMPTNG",
+    "385": "INTR PART DIFF EQUA",
+    "397": "IV MATH TCH SECDY",
+    "403": "ABSTRCT ALGEBRA II",
+    "414": "ANALYSIS I",
+    "415": "ANALYSIS II",
+    "435": "GEOMETRY I",
+    "436": "GEOMETRY II",
+    "481": "NUMRC MTHDS DIFF EQ",
+    "497": "TEACH SEC SCHL MATH"
+}
+
+Final dictionary of all courses appearing after data cleaning:
+{
+    '104': 'INTRO TO PROBABILTY',
+    '105': 'INTRO TO MATH IDEA',
+    '140': 'COLLEGE ALGEBRA',
+    '143': 'PREP FOR CALCULUS',
+    '145': 'APPLD TRIGONOMETR',
+    '150': 'DISC MATH BUS&SOC S',
+    '151': 'BUS & SOC SCI CALC',
+    '160': 'SURVEY OF CALCULUS',
+    '165': 'CALCULUS I',
+    '166': 'CALCULUS II',
+    '207': 'MATRCES&LINEAR ALGB',
+    '265': 'CALCULUS III',
+    '266': 'ELEM DIFF EQUATNS',
+    '267': 'DIFF EQ & TRANSFMS',
+    '101': 'ORIENTATION IN MATH',
+    '201': 'INTRO TO PROOFS',
+    '240': 'INVESTM&CREDIT MATH',
+    '301': 'ABSTRACT ALGEBRA I',
+    '302': 'ABSTRCT ALGEBRA II',
+    '304': 'COMBINATORICS',
+    '314': 'GRAPH THEORY',
+    '317': 'THRY LINEAR ALGEBRA',
+    '350': 'NUMBER THEORY',
+    '341': 'INTR THY PROBAB&S I',
+    '342': 'INTR THY PR&STAT II',
+    '365': 'COMPLEX VARIABLES',
+    '373': 'INTR SCIENTF CMPTNG',
+    '385': 'INTR PART DIFF EQUA',
+    '397': 'IV MATH TCH SECDY',
+    '414': 'ANALYSIS I',
+    '415': 'ANALYSIS II',
+    '435': 'GEOMETRY I',
+    '436': 'GEOMETRY II',
+    '497': 'TEACH SEC SCHL MATH'
+}
+
+gen_prereqs = {'143':['140'],
+               '160':['145'],
+               '165':['143','140'],
+               '166':['165','143','140'],
+               '207':['165','143','140'],
+               '265':['166','165','143','140'],
+               '266':['265','166','165','143','140'],
+               '267':['265','166','165','143','140'],
+               }
+
+math_prereqs = {'304':['201'],
+                '314':['201'],
+                '317':['201'],
+                '350':['201'],
+                '414':['201'],
+                '435':['201'],
+                '436':['201'],
+                '301':['317','201'],
+                '407':['317','201'],
+                '415':['414','201'],
+                '302':['301','317','201'],
+                '397':['301','317','201'],
+
+}
