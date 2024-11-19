@@ -1,0 +1,35 @@
+In the original data set there are students with multiple degrees but no way to determine which is `first' using the columns 'MAJOR_CURR', 'MAJOR_CURR.1', and 'MAJOR_CURR.2'.
+
+I identified these students and modified the original data set to ensure that an appropriate `first' degree can selected using these columns.
+
+Here are the students and the changes with justification
+
+1256 - Changed MAJOR_CURR to only contain COM S. Student changes to COM S after first semester and earns a degree in COM S and also gets a Bachelor's of Liberal Studies (BLS) for some reason.
+
+1855 - Changed MAJOR_CURR.2 to only contain MGMT. The student's two undergraduate degrees are in Management (MGMT) and Management Information Systems (MIS), so MGMT seemed sufficient. Original entry was EDUC, which is the student's graduate department.
+
+2399 - Changed MAJOR_CURR to only contain COM S. Same reasoning as student 1256.
+
+3550 - Changed MAJOR_CURR.2 to only contain FOR. The student's two undergraduate degrees as in Forestry (FOR) and Global Resource Systems (GLOBE), so chose alphabetically. Original entry was NREM which is student's graduate department.
+
+4414 - Changed MAJOR_CURR to only contain STAT. Student began as a CHEM major, but changes to STAT after the first semester and gets a degree in Statistics (STAT) and Business Analytics (BU AN).
+
+5414 - Changed MAJOR_CURR.1 to GEN S. The Genetics degree is listed as GEN but the major is listed as GEN S for whatever reason.
+
+6462 - Changed MAJOR_CURR.2 to MU BA. Student earned the BA in Music (MU BA), but seemed to have been enrolled in the Bachelor's of Music Program (MU BM).
+
+6976 - Changed MAJOR_CURR.2 to FS H. Student earned the Food Sciences (FS H) degree in 2019 and their other degrees at a later date, so FS H seems good for the `first' degree
+
+7989 - For whatever reason this student has two different CHEM BS degrees listed, removed one of them.
+
+9464 - Changed MAJOR_CURR.2 to BIOCH. Student earned a bachelors and masters in Bio-chem (BIOCH) but also a bachelors in World Languages (WLC), so choose the BIOCH to be the `first' one.
+
+9599 - Changed MAJOR_CURR.2 to MKT. Student earned the Marketing degree (MKT) in 2019 and their other degrees at a later date.
+
+11450 - Changed MAJOR_CURR.2 to FS H. Same reasoning as 3550.
+
+12403 - Changed MAJOR_CURR.2 to HD FS. Same reasoning as 3350.
+
+12622 - Changed MAJOR_CURR.2 to AN S. Same reasoning as 3350.
+
+12986 - Changed MAJOR_CURR.2 to ECON. The original value was ECONS which is the designation for being a grad student in the ECON department.

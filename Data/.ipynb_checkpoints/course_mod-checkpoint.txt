@@ -1,0 +1,53 @@
+Potential Removal
+-----------------
+HIGH SCHOOL ALGEBRA (10) - Remedial course that did not count for credit. No longer offered and was below a 100 level course
+UNDERGRAD SEMINAR (492) - Content varied each semester and this course is no longer offered.
+SPECIAL TOPICS (495) - Content varied each semester and course is not offered on a regular basis.
+INDEPENDENT STUDY (490) - Same reason as SPECIAL TOPICS
+DISCOVERING MATH (106) - Only offered a few semesters with somewhat low enrollment
+LIFE SCI CALC&MDL I (181) - No longer offered.
+INTR THY PROBAB&S I (341) and INTR THY PR&STAT II (342) - Technically not math courses - taught by the STAT department, cross-listed with MATH
+TOPOLOGY (331) - No longer offered and generally had low enrollment
+
+General Math Courses
+--------------------
+
+INTRO TO MATH IDEA (105)
+COLLEGE ALGEBRA (140)
+PREP FOR CALCULUS (143)
+APPLD TRIGONOMETR (145)
+DISC MATH BUS&SOC S (150)
+BUS & SOC SCI CALC (151)
+SURVEY OF CALCULUS (160)
+CALCULUS I (165)
+CALCULUS II (166)
+MATRCES&LINEAR ALGB (207)
+CALCULUS III (265)
+ELEM DIFF EQUATNS (266)
+DIFF EQ & TRANSFMS (267)
+
+
+Math Major Specific
+-------------------
+ORIENTATION IN MATH (101)
+INTRO TO PROOFS (201)
+INVESTM&CREDIT MATH (240)
+ABSTRACT ALGEBRA I (301)
+COMBINATORICS (304)
+GRAPH THEORY (314)
+NUMBER THEORY (350)
+COMPLEX VARIABLES (365)
+INTR SCIENTF CMPTNG (373)
+INTR PART DIFF EQUA (385)
+IV MATH TCH SECDY (397)
+ABSTRCT ALGEBRA II (403)
+ANALYSIS I (414)
+ANALYSIS II (415)
+GEOMETRY I (435)
+GEOMETRY II (436)
+NUMRC MTHDS DIFF EQ (481)
+TEACH SEC SCHL MATH (497)
+
+Needs to be fixed
+-----------------
+INTRO TO PROBABILTY and INTRO PROBAB&MATRIC are the same course - (MATH 104)
