@@ -1,0 +1,49 @@
+In the original data set there are several students with missing major information or unclear major information due to multiple degrees.
+
+These students were identified while I was cleaning the data and I  modified the original data set -- specifically the columns 'MAJOR_CURR', 'MAJOR_CURR.1', and 'MAJOR_CURR.2' -- to ensure that my code will select an appropriate ``first'' major
+
+Here are the students and the changes with justification:
+
+723 - Added LAS S to MAJOR_CURR.2 - There was no info in MAJOR_CURR.2 and added the only major listed in MAJOR_CURR.
+
+1256 - Changed MAJOR_CURR to only contain COM S - Student changes to COM S after first semester and earns a degree in COM S and also gets a Bachelor's of Liberal Studies (BLS).
+
+1285 - Added CHEM to MAJOR_CURR.2 - There was no info in MAJOR_CURR.2 and added the only major listed in MAJOR_CURR.
+
+1855 - Changed MAJOR_CURR.2 to only contain MGMT - The student's two undergraduate degrees are in Management (MGMT) and Management Information Systems (MIS), so MGMT seemed sufficient. Original entry was EDUC, which is the student's graduate department.
+
+2399 - Changed MAJOR_CURR to only contain COM S - Same reasoning as student 1256.
+
+2791 - Added COM S to MAJOR_CURR.2 - There was no info in MAJOR_CURR.2 and added the most recent major listed in MAJOR_CURR.
+
+3550 - Changed MAJOR_CURR.2 to only contain FOR - The student's two undergraduate degrees are in Forestry (FOR) and Global Resource Systems (GLOBE), so chose alphabetically. Original entry was NREM which is student's graduate department.
+
+4414 - Changed MAJOR_CURR to only contain STAT - Student began as a CHEM major, but changes to STAT after the first semester and gets a degree in Statistics (STAT) and Business Analytics (BU AN).
+
+5414 - Changed MAJOR_CURR.1 to GEN S - The Genetics has two designations (GEN and GEN S) for some reason. 
+
+6462 - Changed MAJOR_CURR.2 to MU BA - MU BA and MU BM are essentially the same thing (Music major) but for some reason this student does not have consistent codes in the MAJOR_CURR columns, so I chose MU BA.
+
+6976 - Changed MAJOR_CURR.2 to FS H - Student earned the Food Sciences (FS H) degree in 2019 and their other degrees at a later date, so FS H seems good for the `first' degree
+
+7989 - For whatever reason this student has two different CHEM BS degrees listed, removed one of them.
+
+8052 - Added INDIS to MAJOR_CURR.2 - There was no info in MAJOR_CURR.2 and added the only major listed in MAJOR_CURR.
+
+9464 - Changed MAJOR_CURR.2 to BIOCH - Student earned a bachelors and masters in Bio-chem (BIOCH) but also a bachelors in World Languages (WLC), so choose the BIOCH to be the `first' one.
+
+9599 - Changed MAJOR_CURR.2 to MKT - Student earned the Marketing degree (MKT) in 2019 and their other degrees at a later date.
+
+10671 - Added COMST to MAJOR_CURR.2 - There was no info in MAJOR_CURR.2 and added the only major listed in MAJOR_CURR.
+
+11087 - Added PHYS to MAJOR_CURR.2 - There was no info in MAJOR_CURR.2 and added the only major listed in MAJOR_CURR.
+
+11450 - Changed MAJOR_CURR.2 to FS H - Same reasoning as 3550.
+
+12070 - Added OPEN to MAJOR_CURR.2 - There was no info in MAJOR_CURR.2 and added the only major listed in MAJOR_CURR.
+
+12403 - Changed MAJOR_CURR.2 to HD FS - Same reasoning as 3350.
+
+12622 - Changed MAJOR_CURR.2 to AN S - Same reasoning as 3350.
+
+12986 - Changed MAJOR_CURR.2 to ECON - The original value was ECONS which is the designation for being a grad student in the ECON department.
