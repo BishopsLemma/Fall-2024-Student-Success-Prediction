@@ -69,16 +69,14 @@ def format_dates(df):
         df[x] = df[x] - 2000
 
     #encode df['ENTRY_SEM_CD] as {'F':0.6, 'S':0.2, '1':0.4}
-    #These floats represent how much of the (academic) year has passed at the time of enrollment.
-    df['ENTRY_SEM_CD'] = df['ENTRY_SEM_CD'].replace({'F':0.6,
-                                                    '1':0.4,
-                                                    'S':0.0})
+    # These floats represent how much of the (academic) year has passed at the time of enrollment.
+    entry_sem_map = {'F': 0.6, '1': 0.4, 'S': 0.0}
+    df['ENTRY_SEM_CD'] = df['ENTRY_SEM_CD'].map(entry_sem_map).infer_objects(copy=False)
 
-    #Next, we encode the semester in which the course was taken and the semester in which the student graduated
+    # Next, we encode the semester in which the course was taken and the semester in which the student graduated
+    sem_map = {'F': 1.0, '1': 0.6, 'S': 0.4}
     for sem in ['SEM_CD', 'SEM_CD.1']:
-        df[sem] = df[sem].replace({'F': 1.0, 
-                                '1': 0.6, 
-                                'S': 0.4})
+        df[sem] = df[sem].map(sem_map).infer_objects(copy=False)
 
     #create columns for entry, course, and grad semesters.
     df['ENT_SEM'] = df['ENTRY_CCYY'] + df['ENTRY_SEM_CD']
@@ -258,7 +256,8 @@ def agg_and_add_Y(df,final_cols):
     df = df[final_cols]
 
     #replace all null values with 0
-    df = df.fillna(0)
+    # df = df.fillna(0).infer_objects(copy=False)
+    df.loc[:, :] = df.fillna(0.0)
 
     #group by student, choose the max value in each column
     df = df.groupby('STUDENT').agg(lambda x: x.loc[x.abs().idxmax()]).reset_index()
