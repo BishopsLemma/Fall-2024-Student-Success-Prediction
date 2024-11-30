@@ -226,7 +226,7 @@ def make_crse_counts_csv(df):
 
     courses = crse_counts['CRSE'].tolist()
     #save the dataframe to a csv file
-    crse_counts.to_csv('../Data/crse_counts.csv', index=False)
+    crse_counts.to_csv('../Data/Datasets/crse_counts.csv', index=False)
 
     print(f'Left with {len(courses)} courses:',courses)
     return df, courses
