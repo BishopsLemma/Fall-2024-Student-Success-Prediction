@@ -28,10 +28,10 @@ As graduation is a binary target, we will use binary classification as our model
 
 Each model was cross-validated and trained on 5 splits of our dataset. Here is a summary of the mean accuracies across all 5 splits:
 
-| Month    | Savings |
+| Model    | CV Accuracy | Test Accuracy | Accuracy Change |
 | -------- | ------- |
-| January  | $250    |
-| February | $80     |
-| March    | $420    |
+| Logistic  | $250    |
+| SVC | $80     |
+| Stacked    | $420    |
 
 ## Future Directions
