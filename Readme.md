@@ -29,8 +29,11 @@ As graduation is a binary target, we will use binary classification as our model
 Each model was cross-validated and trained on 5 splits of our dataset. Here is a summary of the mean accuracies across all 5 splits:
 
 | Model | CV Accuracy | Test Accuracy | Accuracy Change |
-| ----- | ----------- | ------------- | --------------- |
+| ----- |:-----------:|:-------------:|:---------------:|
 | Logistic | 63.08 | 62.44 | -1.01 |
+| SVC | 64.86 | 64.53 | -0.5 |
+| XGBoost | 66.5 | 65.7 | -1.19 |
+| Stacked | 69.47 | 65.78 | -5.27 |
 
 
 ## Future Directions
