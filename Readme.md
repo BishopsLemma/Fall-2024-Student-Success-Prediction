@@ -26,4 +26,12 @@ As graduation is a binary target, we will use binary classification as our model
 
 ## Results
 
+Each model was cross-validated and trained on 5 splits of our dataset. Here is a summary of the mean accuracies across all 5 splits:
+
+| Month    | Savings |
+| -------- | ------- |
+| January  | $250    |
+| February | $80     |
+| March    | $420    |
+
 ## Future Directions
