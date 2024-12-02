@@ -13,22 +13,6 @@ palette = {0: 'indianred', 1: 'steelblue'}
 
 grad_rate = 0.4897070035943797
 
-def bayes_error_rate(data, course_list):
-    """ Calculate the Bayes error rate for a list of variables (course_list) in a dataframe (data). """
-    grouped = data.groupby(course_list)
-    data_grouped = pd.DataFrame({
-        'COUNT(X)' : grouped.size(),
-        'Pr(X)' : grouped.size() / len(data),
-        'Pr(Y|X)': grouped['Y'].mean()}).reset_index()
-
-    #add a column named "ERROR(Y|X)" which contains the minimum of Pr(Y|X) and 1-Pr(Y|X)
-    data_grouped['ERROR(Y|X)'] = np.minimum(data_grouped['Pr(Y|X)'], 1 - data_grouped['Pr(Y|X)'])
-
-    #compute the bayes error rate. This is the expected value of ERROR(Y|X) over the distribution of X
-    bayes_error_rate = np.dot(data_grouped['ERROR(Y|X)'], data_grouped['Pr(X)'])
-    
-    return bayes_error_rate, data_grouped
-
 def plot_course_hist_density(data,
                       course_list,
                       crse_dict,
