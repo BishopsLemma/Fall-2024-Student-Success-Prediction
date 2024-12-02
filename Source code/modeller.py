@@ -362,18 +362,38 @@ def logreg_plot_fimp(fimp_df, save=False):
 
 # Functions for calculating Bayes error rate
 
-def bayes_error_rate(data, features):
+def get_bayes_error(data, features, save=False):
     """ Calculate the Bayes error rate for a list of variables (features) in a dataframe (data). """
     grouped = data.groupby(features)
     data_grouped = pd.DataFrame({
         'COUNT(X)' : grouped.size(),
         'Pr(X)' : grouped.size() / len(data),
-        'Pr(Y|X)': grouped['Y'].mean()}).reset_index()
+        'Pr(Y=1|X)': grouped['Y'].mean()}).reset_index()
 
     #add a column named "ERROR(Y|X)" which contains the minimum of Pr(Y|X) and 1-Pr(Y|X)
-    data_grouped['ERROR(Y|X)'] = np.minimum(data_grouped['Pr(Y|X)'], 1 - data_grouped['Pr(Y|X)'])
+    data_grouped['ERROR(Y|X)'] = np.minimum(data_grouped['Pr(Y=1|X)'], 1 - data_grouped['Pr(Y=1|X)'])
+
+    #add a column named "ERROR(Y|X) * Pr(X)" which is the product of "ERROR(Y|X)" and "Pr(X)"
+    data_grouped['ERROR(Y|X) * Pr(X)'] = data_grouped['ERROR(Y|X)'] * data_grouped['Pr(X)']
 
     #compute the bayes error rate. This is the expected value of ERROR(Y|X) over the distribution of X
     bayes_error_rate = np.dot(data_grouped['ERROR(Y|X)'], data_grouped['Pr(X)'])
+
+    #make a separate dataframe df_singletons which contains only the rows where 'COUNT(X)' is 1
+    data_singletons = data_grouped[data_grouped['COUNT(X)'] == 1]
+
+    #drop the rows in df_singletons from data_grouped
+    data_grouped = data_grouped[data_grouped['COUNT(X)'] != 1]
+
+    #sort the data_grouped dataframe by Pr(Y|X) in descending order by 'ERROR(Y|X) * Pr(X)', and in case of a tie, by 'COUNT(X)' in descending order
+    data_grouped = data_grouped.sort_values(by=['ERROR(Y|X) * Pr(X)', 'COUNT(X)'], ascending=[False, False]).reset_index(drop=True)
+
+    #add a column for the cumulative sum of 'ERROR(Y|X) * Pr(X)' along the column
+    data_grouped['CUMULATIVE_ERROR'] = data_grouped['ERROR(Y|X) * Pr(X)'].cumsum()
+
+    if save:
+        data_grouped.to_csv('../Data/Datasets/dataset_bayes_grouped.csv')
+        data_singletons.to_csv('../Data/Datasets/dataset_bayes_singletons.csv')
+
+    return data_grouped, data_singletons
     
-    return bayes_error_rate, data_grouped
