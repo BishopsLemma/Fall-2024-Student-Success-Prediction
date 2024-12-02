@@ -19,10 +19,10 @@ After cleaning the data set, we had 9,181 undergraduate students who took a tota
 
 As graduation is a binary target, we will use binary classification as our modeling approach. After an initial exploration with several different methods, we focused our effects on four models
 
-- Logistic Regression: This will be our baseline model.
-- Support Vector Classifier: This will capture any non-linearity that is missed by logistic regression.
-- XGBoost Classifer: The use of gradient boosting will help this model learn wit hteh subtler aspects of the data that may have been missed by the previous two
-- Custom Stacked Classifer: This is a customized ensemble classifier which uses prediction probabilities from our previously fitted SVC and XGB classifiers as features for a logistic regression model.
+- **Logistic Regression**: This will be our baseline model.
+- **Support Vector Classifier**: This will capture any non-linearity that is missed by logistic regression.
+- **XGBoost Classifer**: The use of gradient boosting will help this model learn wit hteh subtler aspects of the data that may have been missed by the previous two
+- **Custom Stacked Classifer**: This is a customized ensemble classifier which uses prediction probabilities from our previously fitted SVC and XGB classifiers as features for a logistic regression model.
 
 ## Results
 
@@ -35,5 +35,8 @@ Each model was cross-validated and trained on 5 splits of our dataset. Here is a
 | XGBoost | 66.5 | 65.7 | -1.19 |
 | Stacked | 69.47 | 65.78 | -5.27 |
 
+The accuracy scores are overall not great, but there does not appear to be an issue with overfitting or underfitting since the change in accuracy from train to test sets is relatively small.
+
+As for feature importance, the logistic models seemed to prefer the cumulative performance of a student as opposed to performance in individual courses; specifically, the cumulative columns were the top 16 coefficients by absolute value. The XGBoost models were quite different, and the top few features were heavily populated with courses, the top 3 being MATH 104 (Introduction to Probability), MATH 143 (Preparation for Calculus), and MATH 166 (Calculus II).
 
 ## Future Directions
