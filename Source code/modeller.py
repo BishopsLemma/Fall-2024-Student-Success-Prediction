@@ -396,3 +396,4 @@ def get_bayes_error(data, features, save=False):
         data_singletons.to_csv('../Data/Datasets/dataset_bayes_singletons.csv')
 
     return data_grouped, data_singletons
+    
