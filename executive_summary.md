@@ -10,7 +10,7 @@ After cleaning the data set, we had 9,181 undergraduate students who took a tota
 
 ## Modeling Approach
 
-As graduation is a binary target, we will use binary classification as our modeling approach. After an initial exploration with several different methods, we focused our effects on four models
+As graduation is a binary target, we will use binary classification as our modeling approach. After an initial exploration with several different methods, we focused our efforts on four models
 
 - **Logistic Regression**: This will be our baseline model.
 - **Support Vector Classifier**: This will capture any non-linearity that is missed by logistic regression.
@@ -30,4 +30,4 @@ Each model was cross-validated and trained on 5 splits of our dataset. Here is a
 
 The accuracy scores are overall not great, but there does not appear to be an issue with overfitting or underfitting since the change in accuracy from train to test sets is relatively small.
 
-As for feature importance, the logistic models seemed to prefer the cumulative performance of a student as opposed to performance in individual courses; specifically, the cumulative columns were the top 16 coefficients by absolute value. The XGBoost models were quite different, and the top few features were heavily populated with courses, the top 3 being MATH 104 (Introduction to Probability), MATH 143 (Preparation for Calculus), and MATH 166 (Calculus II).
+As for feature importance, the logistic models seemed to prefer the cumulative performance of a student as opposed to performance in individual courses; specifically, the cumulative columns were the top 16 coefficients by absolute value. The XGBoost models were quite different; the most significant features were the individual courses with the top 3 being MATH 104 (Introduction to Probability), MATH 143 (Preparation for Calculus), and MATH 166 (Calculus II).
