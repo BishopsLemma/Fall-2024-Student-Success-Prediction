@@ -101,14 +101,6 @@ def load_models(model_names) -> dict:
         models_dict[model_name] = models
     return models_dict
 
-# Usage example:
-# models = {
-#     'logreg': logreg_models,
-#     'xgb': xgb_models,
-#     'svc': svc_models
-# }
-# save_models(models, 'models/trained/')
-
 #################################################################
 
 #Cross-validation with tuning/fitting
