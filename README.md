@@ -45,17 +45,6 @@ As for feature importance, the logistic models seemed to prefer the cumulative p
 
 ## Concluding Analysis and Recommendations
 
-Ultimately, we find through the use of a Bayes Classifier that there are intrinsic limits to the predictive power of our dataset. A detailed discussion of this classifier can be found in the notebook titled "bayes_error". In short, the lower bound of the Bayes Error Rate (the theoretical minimum error rate for a binary classifier) is 25.2% for our dataset as determined by computing the Bayes Classifier. The results of this computatation are as follows, where a "group" is a unique vector of courses:
+Ultimately, there is an intrinsic limit to the predictive power of our dataset. The theoretical minimum error for any binary classifier is given by the Bayes Error Rate and ours is a 25.3%, meaning that there is an upper bound of 74.7% on the accuracy of any model we can apply. This is primarily due to the fact that there are only 2580 distinct observations in our data set and of those only 578 have feature values of size greater than 1. Regardless, our models only incurred 10% more error than the theoretical least possible error, so relative to this it is reasonable to conclude that our models performed reasonably well.
 
-Total number of groups: 2580
-
-There are 578 groups of feature values of size greater than 1.
-
-There are 2002 singleton groups of feature values.
-
-Lower bound on Bayes Error Rate: 0.2528047053697844
-
-Error contributed by 0.7819409650364885 of the whole dataset.
-
-There we have it! Our original dataset of approximately 9000 observations actually only contains 2580 distinct observations. Of these, 2002 are singleton observations, from which our computations don't reveal any intrinsic error. The remaining 578 groups of observations account for a 25.2% error rate! Thus, our binary classifiers incurred only 10% more error than the theoretical least possible error (which itself must be a gross under-estimate given that 2002 observations are not contributing). Therefore, relative to this minimum forced error, it is reasonable to conclude that our models performed reasonably well, and the bulk of the error is caused by the insufficient ability of the features (courses) to separate the classes! This limitation may only be overcome by a having more granular data for students, indicating that future studies will likely either need to be performed by employees of institution at which the students are enrolled or by using detailed data that has been rigorously anonymized to protect student privacy. Given access to such a dataset, this analysis can be applied with with greater effectiveness and the ability to provide course-specific guidance.  
-
+The bulk of the error is caused by the insufficient ability of the features (courses) to separate the classes. This limitation may only be overcome by a having more granular data for students, indicating that future studies will likely either need to be performed by employees of institution at which the students are enrolled or by using detailed data that has been rigorously anonymized to protect student privacy. Given access to such a dataset, this analysis can be applied with with greater effectiveness and the ability to provide course-specific guidance.  
