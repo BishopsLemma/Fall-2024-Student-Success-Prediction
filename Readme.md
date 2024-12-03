@@ -28,7 +28,7 @@ As graduation is a binary target, we will use binary classification as our model
 
 Each model was cross-validated and trained on 5 splits of our dataset. Here is a summary of the mean accuracies across all 5 splits:
 
-<center>
+<div align="center">
  
 | Model | CV Accuracy | Test Accuracy | Accuracy Change |
 | ----- |:-----------:|:-------------:|:---------------:|
@@ -37,7 +37,7 @@ Each model was cross-validated and trained on 5 splits of our dataset. Here is a
 | XGBoost | 66.5 | 65.7 | -1.19 |
 | Stacked | 69.47 | 65.78 | -5.27 |
 
-</center>
+</div>
 
 The accuracy scores are overall not great, but there does not appear to be an issue with overfitting or underfitting since the change in accuracy from train to test sets is relatively small.
 
